@@ -1,0 +1,65 @@
+#include<iostream>
+using  namespace std;
+template<class T>
+
+void sort(T c[],int size)
+{
+    int min,i,j;
+    for(i = 0;i<size;i++){
+       min = i;
+         for(j = i+1;j<size;j++){
+            if(c[min]>c[j]){
+               min = j;
+}
+}
+if(min != i){
+         T temp = c[min];
+         c[min] = c[i];
+         c[i] = temp;
+}
+}
+   
+   for(i = 0;i<size;i++){
+      cout<<c[i]<<"\t";
+}
+   cout<<endl;
+}
+
+int main(){
+   int a[10],size,ch;
+   float b[10];
+   char d[10];
+   cout<<"Enter the size of an array :"<<endl;
+   cin>>size;
+
+   cout<<"Manu "<<endl;
+   cout<<"1.int\n2.float\n3.char"<<endl;
+   cout<<"Enter the switch :"<<endl;
+   cin>>ch;
+switch(ch){
+  case 1:
+   cout<<"Enter the integer array :"<<endl;
+   	for(int j = 0;j<size;j++)
+	{
+    		 cin>>a[j];
+	}
+   cout<<"Sorted int array is :"<<endl;
+   sort(a,size);
+   break;
+ case 2:
+   cout<<"Enter the float array :"<<endl;
+   for(int j = 0;j<size;j++){
+       cin>>b[j];
+   } 
+   cout<<"Sorted float array is :"<<endl;
+   sort(b,size);
+   break;
+ case 3:
+   cout<<"Enter character : "<<endl;
+   for(int j = 0;j<size;j++)
+	{
+           cin>>d[j];
+	} 
+   cout<<"sorted char is :"<<endl;
+   sort(d,size);
+   break; }}
